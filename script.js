@@ -28,3 +28,58 @@ console.log( screens.toLowerCase().split(', ') );
 
 // Процент, который получит посредник.
 console.log(`Посреднику - ${rollback}% \nЭто целых ${ fullPrice * (rollback/100) } рублей/ долларов/гривен/юани !`);
+
+
+// Урок 3 "Динамическая типизация данных в Javascript. Условия, ветвления."
+
+// Выполнение задания
+
+title = prompt("Как называется ваш проект?");
+
+screens = prompt("Какие типы экранов нужно разработать?", "Простые, Сложные, Интерактивные");
+
+screenPrice = +prompt("Сколько будет стоить данная работа?", "пример: " + 12000);
+
+adaptive = confirm("Нужен ли адаптив на сайте?");
+
+let service1 = prompt("Какой дополнительный тип услуги нужен?");
+
+let servicePrice1 = +prompt("Сколько это будет стоить?");
+
+let service2 = prompt("Какой дополнительный тип услуги нужен?");
+
+let servicePrice2 = +prompt("Сколько это будет стоить?");
+
+// rollback = +(Math.ceil(Math.random()* 100));
+rollback = +(Math.ceil((rollback / fullPrice)* 100));
+
+
+console.log(rollback);
+
+fullPrice = screenPrice + servicePrice1 + servicePrice2;
+
+console.log(fullPrice);
+
+let servicePercentPrice = fullPrice - rollback;
+console.log(servicePercentPrice);
+
+
+// Конструкция Условий 
+
+if(fullPrice >= 30000) {
+
+    console.log("Даем скидку в 10%");
+
+}else if(fullPrice >= 15000 && fullPrice < 30000) {
+
+    console.log("Даем скидку в 5%");
+
+}else if(fullPrice < 15000 && fullPrice >= 0 ) {
+
+    console.log("Скидка не предусмотрена");
+
+}else {
+
+    console.log("Что то пошло не так");
+
+}
