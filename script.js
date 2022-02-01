@@ -28,3 +28,4 @@ console.log( screens.toLowerCase().split(', ') );
 
 // Процент, который получит посредник.
 console.log(`Посреднику - ${rollback}% \nЭто целых ${ fullPrice * (rollback/100) } рублей/ долларов/гривен/юани !`);
+console.log("!!!!!");
