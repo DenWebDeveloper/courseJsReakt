@@ -1,34 +1,6 @@
+// Задание2 Усложненное.
 
-let  title = "Список дел";
-let  screens = "Простые, Сложные, Интерактивные";
-let  screenPrice = 100;
-let  rollback = 10;
-let  fullPrice = 1000;
-let  adaptive = true;
-
-
-console.log(
-
-    `Типы перемнных: \n ` + 
-
-    `\t title: ${typeof(title)},
-
-    fullPrice: ${typeof(fullPrice)},
-
-    adaptive: ${typeof(adaptive)};`);
-
-console.log("Длина строки 'screens' = "+ screens.length  + " " + "символ");
-
-console.log(`Стоимость верстки экранов: ${screenPrice} рублей/ долларов/гривен/юани`);
-
-console.log(`Стоимость разработки сайта: ${fullPrice} рублей/ долларов/гривен/юани`);
-
-// Перевел строку screens в нижний регист и вывел в массив, затемв console.
-console.log( screens.toLowerCase().split(', ') );
-
-// Процент, который получит посредник.
-console.log(`Посреднику - ${rollback}% \nЭто целых ${ fullPrice * (rollback/100) } рублей/ долларов/гривен/юани !`);
-let lang = prompt("Выберите язык из представленных", "RU" + "/" +"EN");
+let lang = prompt("Введите название языка 'en' или 'ru'");
 
 // Массив дней недель.
 let daysOfWeek = [
@@ -43,11 +15,11 @@ let daysOfWeek = [
 
 // Прверка условий через if.
 
-if(lang === "RU") {
+if(lang === "ru") {
 
     console.log(daysOfWeek[0]);
 
-}else if(lang === "EN") {
+}else if(lang === "en") {
 
     console.log(daysOfWeek[1]);
 
@@ -59,10 +31,10 @@ if(lang === "RU") {
 // Условие через Switch
 
 switch(lang) {
-    case "RU":
+    case "ru":
         console.log(daysOfWeek[0]);
         break;
-    case "EN":
+    case "en":
         console.log(daysOfWeek[1]);
         break;
     default:
@@ -70,7 +42,20 @@ switch(lang) {
 }
 
 
+// Дни недели через многомерный массив
+
+let daysOfWeek2 = {
+  ru: ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
+  en: ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'],
+};
+
+let arr = daysOfWeek2[ lang ];
+
+console.log(arr);
+
+
+
+
 let namePerson = prompt("Введите имя", "Артем / Александр / любое другое имя");
 
 console.log((namePerson === "Артем") ? "Директор" : (namePerson === "Александр") ? "Преподаватель" : "студент");
-
