@@ -80,7 +80,28 @@ let servicePercentPrice = function getServicePercentPrices(item, item2) {
 };
 
 
+function getRollbackMessage() {
+    
+    if(fullPrice >= 30000) {
 
+        console.log("Даем скидку в 10%");
+
+    }else if(fullPrice >= 15000 && fullPrice < 30000) {
+
+        console.log("Даем скидку в 5%");
+
+    }else if(fullPrice < 15000 && fullPrice >= 0 ) {
+
+        console.log("Скидка не предусмотрена");
+
+    }else {
+
+        console.log("Что то пошло не так");
+
+    }
+}
+
+getRollbackMessage();
 
 //  5 Выводит в консоль значание тииа переменных
 
@@ -103,6 +124,8 @@ getTitle(title);
 
 servicePercentPrice(fullPrice, rollback);
 
+// getRollbackMessage();
+
 
 
 
@@ -111,6 +134,7 @@ servicePercentPrice(fullPrice, rollback);
 showTypeOf(getTitle(title));
 
 showTypeOf(fullPrice);
+
 
 showTypeOf(adaptive);
 
@@ -122,16 +146,6 @@ showTypeOf(adaptive);
 console.log(screens);
 
 
-
-
-
 console.log(servicePercentPrice(fullPrice, rollback) + " " + "c учетом вычета за откат");
-
-
-// console.log(getTitle(title));
-
-
-// console.log(getRollbackMessage(fullPrice));
-
 
 
