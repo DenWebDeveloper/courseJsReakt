@@ -1,30 +1,39 @@
 "use strict";
 
 
-let change = function(arg){
+// Перменная для ввода данных.
+// let massage = "";
 
-    let res = "";
-    
+const foo = (arg) => {
+
+    let res = arg;
+
+    // console.log(res);
+
 
     if (typeof arg === "string") {
 
-        const maxLength = 30;
-        const str = arg.trim();
+        const maxLength = 5;
+        let res = arg.trim();
 
-        if (str.length > maxLength) {
-            res = str.substr(0,maxLength) + '...';
-            console.log("Строка более 30 символов - ну очень при очень длинная строчка получилась!");
-        } else if(str.length <= maxLength){
-            res = str;
-            console.log("Ввели все корректно");
+        if (res.length > maxLength) {
+
+          let res1 = res.substr(0,maxLength) + '...';
+
+          console.log(res1);
+          
+        } else if(res.length == maxLength){
+
+           let send = res;
+
+            console.log(send);
+
+        }else if (typeof res === "number"){
+
+            console.log("Вы ввели цифры, будьте внимательны...");
         }
-        
-    }else if(typeof arg === "number"){
-        console.log("Вы ввели цыфры");
-    }
-  
-    return res;
+    } return res;
+    
 };
 
-change("Здесь можно что-то ввести..."); //Здесь в качестве аргумента нужно что-то указать, 
-//чтобы увидеть результат. Пример: change("Какой-то текст || набрать цифры")
+foo(12354);
