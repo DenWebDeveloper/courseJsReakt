@@ -1,10 +1,49 @@
 
+// Задание 1 Урок 4
+
+// Объявление переменных
+
 let  title = "Список дел";
 let  screens = "Простые, Сложные, Интерактивные";
 let  screenPrice = 100;
 let  rollback = 10;
 let  fullPrice = 1000;
 let  adaptive = true;
+
+let servicePrice1 = +prompt("Сколько это будет стоить?", "2000");
+
+let servicePrice2 = +prompt("Сколько это будет стоить?", "3000");
+
+
+
+
+// Объявление функций
+
+const showTypeOf = function(type) {
+    console.log(type, typeof type);
+};
+
+let allServicePrice = function(serPrice1, serPrice2) {
+    return serPrice1 + serPrice2;
+};
+
+function getFullPrice(a, b) {
+    return a + b;
+}
+
+
+
+// Запуск функий
+
+fullPrice = getFullPrice();
+
+allServicePrice(servicePrice1, servicePrice2);
+
+getFullPrice(screenPrice, allServicePrice);
+
+
+
+
 
 
 console.log(
@@ -15,7 +54,8 @@ console.log(
 
     fullPrice: ${typeof(fullPrice)},
 
-    adaptive: ${typeof(adaptive)};`);
+    adaptive: ${typeof(adaptive)};`
+);
 
 console.log("Длина строки 'screens' = "+ screens.length  + " " + "символ");
 
