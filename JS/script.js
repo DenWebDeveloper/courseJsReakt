@@ -124,8 +124,6 @@ getTitle(title);
 
 servicePercentPrice(fullPrice, rollback);
 
-// getRollbackMessage();
-
 
 
 
@@ -147,5 +145,4 @@ console.log(screens);
 
 
 console.log(servicePercentPrice(fullPrice, rollback) + " " + "c учетом вычета за откат");
-
 
