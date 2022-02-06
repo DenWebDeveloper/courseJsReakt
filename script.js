@@ -28,9 +28,9 @@ let servicePrice2 = +prompt("Сколько это будет стоить?", "3
 //   1 Возвращает сумму всех доп. услуг (Тип - function expression)
 
 
-let allServicePrice = function getAllServicePrices (serPrice1, serPrice2) {
+let allServicePrice = function getAllServicePrices ( price1,  price2) {
 
-    return serPrice1 + serPrice2;
+    return  price1 + price2;
 
 };
 
@@ -50,6 +50,8 @@ function getFullPrice(a, b) {
     return a + b;
 
 }
+
+
 
 /*
     Объявить функцию getTitle. 
@@ -72,14 +74,19 @@ let getTitle = function(str){
 */
 
 
-servicePercentPrice
+let servicePercentPrice = function getServicePercentPrices(item, item2) {
+
+    return item - item2;
+};
+
+
 
 
 //  5 Выводит в консоль значание тииа переменных
 
 let  showTypeOf = function(item) {
 
-    console.log(item, typeof item);
+    console.log(item, typeof item );
     
 };
 
@@ -88,9 +95,18 @@ let  showTypeOf = function(item) {
 
 allServicePrice(servicePrice1, servicePrice2);
 
-fullPrice = getFullPrice(screenPrice, allServicePrice);
+fullPrice = getFullPrice(screenPrice, allServicePrice(servicePrice1, servicePrice2));
+
+rollback = +(Math.ceil((getFullPrice(screenPrice, allServicePrice(servicePrice1, servicePrice2))/100)* 10));
 
 getTitle(title);
+
+servicePercentPrice(fullPrice, rollback);
+
+
+
+
+// Функция выводит типы переменных
 
 showTypeOf(getTitle(title));
 
@@ -102,12 +118,20 @@ showTypeOf(adaptive);
 
 // Консоль Логи
 
-console.log(getTitle(title));
-
-
 
 console.log(screens);
+
+
+
+
+
+console.log(servicePercentPrice(fullPrice, rollback) + " " + "c учетом вычета за откат");
+
+
+// console.log(getTitle(title));
+
+
 // console.log(getRollbackMessage(fullPrice));
-// console.log(servicePercentPrice);
+
 
 
