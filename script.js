@@ -1,39 +1,48 @@
 "use strict";
 
 
-// Перменная для ввода данных.
-// let massage = "";
+let wordCheck = function(arg) {
 
-const foo = (arg) => {
-
-    let res = arg;
-
-    // console.log(res);
-
+    let res;
 
     if (typeof arg === "string") {
 
-        const maxLength = 5;
-        let res = arg.trim();
+        const maxLength = 30;
 
-        if (res.length > maxLength) {
+        const str = arg.trim();
 
-          let res1 = res.substr(0,maxLength) + '...';
+        if (str.length > maxLength) {
 
-          console.log(res1);
-          
-        } else if(res.length == maxLength){
+            res = str.substr(0,maxLength) + '...';
 
-           let send = res;
+            // console.log(res);
 
-            console.log(send);
-
-        }else if (typeof res === "number"){
-
-            console.log("Вы ввели цифры, будьте внимательны...");
         }
-    } return res;
-    
+        else {
+
+            res = str;
+
+        }
+
+        console.log(res);
+
+
+    }else {
+
+        let error = "Вы ввели число";
+        console.log(error);
+
+    }
+
 };
 
-foo(12354);
+let massage = 1; // В переменную massage нужно что-то напечатать.
+
+wordCheck(massage);
+
+
+
+
+
+
+
