@@ -125,7 +125,9 @@ servicePercentPrice = getServicePercentPrices();
 
 fullPrice = getFullPrice();
 
-rollback = +(Math.ceil((fullPrice / 10)* 100));
+rollback = +(Math.ceil((rollback / fullPrice)* 100));
+
+console.log(rollback);
 
 title = getTitle(title);
 
