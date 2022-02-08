@@ -90,7 +90,7 @@ const getAllServicePrice = function() {
 
 function getFullPrice() {
 
-    return +appData.screenPrice + appData.allServicePrice;
+    return appData.screenPrice + appData.allServicePrice;
 
 }
 
@@ -141,12 +141,12 @@ function getRollbackMessage(fullPrice) {
 appData.asking();
 
 appData.allServicePrice = getAllServicePrice();
-appData.rollback = +(Math.ceil((appData.rollback / appData.fullPrice)* 100));
 
 
 appData.servicePercentPrice = getServicePercentPrices();
 
 appData.fullPrice = getFullPrice();
+appData.rollback = +(Math.ceil((appData.rollback / appData.fullPrice)* 100));
 
 console.log(appData.rollback);
 
