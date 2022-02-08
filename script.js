@@ -146,7 +146,8 @@ appData.allServicePrice = getAllServicePrice();
 appData.servicePercentPrice = getServicePercentPrices();
 
 appData.fullPrice = getFullPrice();
-appData.rollback = +(Math.ceil((appData.rollback / appData.fullPrice)* 100));
+
+appData.rollback = +(Math.ceil((getFullPrice(appData.screenPrice, appData.allServicePrice(appData.servicePrice1, appData.servicePrice2))/100)* 10));
 
 console.log(appData.rollback);
 
