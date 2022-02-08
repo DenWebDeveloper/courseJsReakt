@@ -38,7 +38,7 @@ const asking = function(){
 
     }
 
-    adaptive = prompt("Нужен ли адаптив");
+    adaptive = confirm("Нужен ли адаптив");
 };
 
 const getAllServicePrice = function() {
