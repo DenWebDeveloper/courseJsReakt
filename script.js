@@ -105,7 +105,9 @@ const getTitle = function(str){
 
 const  getServicePercentPrices = function () {
 
-    return appData.fullPrice - (appData.fullPrice*(appData.rollback / 100)); 
+
+    return appData.fullPrice - appData.rollback; 
+    
 
 };
 
@@ -139,14 +141,14 @@ function getRollbackMessage(fullPrice) {
 appData.asking();
 
 appData.allServicePrice = getAllServicePrice();
+appData.rollback = +(Math.ceil((appData.rollback / appData.fullPrice)* 100));
+
 
 appData.servicePercentPrice = getServicePercentPrices();
 
 appData.fullPrice = getFullPrice();
 
-// appData.rollback = +(Math.ceil((appData.rollback / appData.fullPrice)* 100));
-
-// appData.console.log(appData.rollback);
+console.log(appData.rollback);
 
 appData.title = getTitle(appData.title);
 
