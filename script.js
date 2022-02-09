@@ -28,14 +28,6 @@ const appData = {
         appData.servicePercentPrice = appData.getServicePercentPrices();
         appData.title =appData.getTitle();
     
-        // // ... и результаты расчетов расчеты
-        // // стоимость дополнительных услуг
-        // appData.allServicePrices = appData.getAllServicePrices();
-        // // итоговая стоимость работы
-        // appData.fullPrice = appData.getFullPrice();
-        // // доход разработчика
-        // appData.servicePercentPrice = appData.getServicePercentPrices();
-    
         // сообщения в консоль
         appData.loger();
     },
@@ -146,36 +138,3 @@ const appData = {
 };
 
 appData.start();
-
-
-// Объявление функций
-
-
-
-
-
-// Получаем сумму всех услуг 
-
-
-// Обрабатываем title 
-
-
-// Полная сумма за услуги с вычетом налога
-
-
-
-
-
-
-
-//  5 Выводит в консоль значание тииа переменных
-
-
-// Запуск функий
-
-
-
-// console.log(appData.rollback);
-
-console.log(appData.fullPrice + " " + "Полная стоимость без вычета 10%");
-console.log(appData.servicePercentPrice + " " + "Стоимость услуг с вычетом налога");
