@@ -3,22 +3,6 @@
 
 // Объявление переменных
 
-// let  title;
-// let  screens;
-// let  screenPrice;
-// let  rollback = 10;
-// let  fullPrice = 1000;
-// let  adaptive ;
-
-// let allServicePrice;
-
-// let servicePercentPrice;
-
-
-// let service1;
-// let service2;
-
-
 const appData = {
     
     title: "",
@@ -76,7 +60,7 @@ const getAllServicePrice = function() {
 
         do {
             price = prompt("Сколько это будет стоить?");
-        }while (!isNum(price));
+        } while (!isNum(price));
 
         sum += +price;
 
@@ -86,27 +70,24 @@ const getAllServicePrice = function() {
 
 };
 
-
-
+// Получаем сумму всех услуг 
 function getFullPrice() {
 
-    return appData.screenPrice + appData.allServicePrice;
+    return +appData.screenPrice + appData.allServicePrice;
 
 }
 
+// Обрабатываем title 
+const getTitle = function(){
 
-const getTitle = function(str){
-
-    str = str.trim();
-
-    return str.charAt(0).toUpperCase(0) + str.slice(1).toLowerCase();
+    return appData.title.trim()[0].toUpperCase() + appData.title.trim(1).substr(1).toLowerCase();
 };
 
-
+// Полная сумма за услуги с вычетом налога
 const  getServicePercentPrices = function () {
 
 
-    return appData.fullPrice - appData.rollback; 
+    return appData.fullPrice - (appData.fullPrice * (appData.rollback / 100)); 
     
 
 };
@@ -141,18 +122,11 @@ function getRollbackMessage(fullPrice) {
 appData.asking();
 
 appData.allServicePrice = getAllServicePrice();
-
-
-appData.servicePercentPrice = getServicePercentPrices();
-
 appData.fullPrice = getFullPrice();
+appData.servicePercentPrice = getServicePercentPrices();
+appData.title = getTitle();
 
-appData.rollback = +(Math.ceil((getFullPrice(appData.screenPrice, appData.allServicePrice(appData.servicePrice1, appData.servicePrice2))/100)* 10));
+// console.log(appData.rollback);
 
-console.log(appData.rollback);
-
-appData.title = getTitle(appData.title);
-
-
-console.log(appData.fullPrice);
-console.log(appData.servicePercentPrice);
+console.log(appData.fullPrice + " " + "Полная стоимость без вычета 10%");
+console.log(appData.servicePercentPrice + " " + "Стоимость услуг с вычетом налога");
