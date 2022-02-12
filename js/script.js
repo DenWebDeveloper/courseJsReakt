@@ -5,8 +5,19 @@
 
 const appData = {
     
-    title: "",
-    screens: "",
+    title: document.getElementsByTagName("h1")[0],
+    calculate: document.getElementsByClassName("handler_btn"),
+    setBtn : document.querySelector(".screen-btn"),
+    items1: document.querySelectorAll('.percent'),
+    items2: document.querySelectorAll('.number'),
+    inputTypeRange: document.querySelector('.rollback').querySelector('input[type = "range"]'),
+    span: document.querySelector('.rollback').querySelector('.range-value'),
+    totlInputItem1: document.getElementsByClassName('total-input')[0],
+    totlInputItem2: document.getElementsByClassName('total-input')[1],
+    totlInputItem3: document.getElementsByClassName('total-input')[2],
+    totlInputItem: document.getElementsByClassName('total-input')[3],
+    totlInputItem5: document.getElementsByClassName('total-input')[4],
+    screens: document.querySelectorAll('.screen'),
     screenPrice: 0,
     rollback: 10,
     adaptive: true,
@@ -33,13 +44,26 @@ const appData = {
     },
 
     loger: function (){
-        for (let key in appData) {
-          let type = typeof (appData[key]);
+        // for (let key in appData) {
+        //   let type = typeof (appData[key]);
     
-          console.log(key, (type === 'function' ? '' : appData[key]), '(' + type + ')');
+        //   console.log(key, (type === 'function' ? '' : appData[key]), '(' + type + ')');
 
-        }
-    
+        // }
+
+        console.log(appData.title);
+        console.log(appData.calculate);
+        console.log(appData.setBtn);
+        console.log(appData.items1);
+        console.log(appData.items2);
+        console.log(appData.inputTypeRange);
+        console.log(appData.span);
+        console.log(appData.totlInputItem1);
+        console.log(appData.totlInputItem2);
+        console.log(appData.totlInputItem3);
+        console.log(appData.totlInputItem4);
+        console.log(appData.totlInputItem5);
+        console.log(appData.screens);
     },
 
     asking : function(){
