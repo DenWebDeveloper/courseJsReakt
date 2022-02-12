@@ -47,36 +47,38 @@ const appData = {
 
         do {
             appData.title = prompt("Как называется ваш проект", "Пример: Вестка сайта");
-        } while(appData.isNum(appData.title));
+        } while(appData.isNum(appData.title) || appData.title === "");
 
         do {
             appData.screens = prompt("Простые, Сложные, Интерактивные", "Простые, Сложные и т.д.");
-        } while(appData.isNum(appData.screens));
+        } while(appData.isNum(appData.screens) || appData.screens === "");
 
         do {
             appData.screenPrice = +prompt("Склько будет стоить данная услуга");
-        } while(!appData.isNum(appData.screenPrice));
+        } while(!appData.isNum(appData.screenPrice) || appData.screenPrice === 0);
 
 
         for(let i = 0; i < 2 ; i++){
+
             let name;
             let price = 0;
 
             do {
-                 name = prompt("Какой дополнительный тип услуги нужен?");
-            } while (appData.isNum(name));
-    
-           
+                name = prompt("Какой дополнительный тип услуги нужен?");
+            } while (appData.isNum(name) || name === "");
+
+
             do {
+
                 price = +prompt("Сколько это будет стоить?");
-            } while (!appData.isNum(price));
-    
-           appData.services[name] = +price;
-    
+            } while (!appData.isNum(price) || price === 0);
+
+            appData.services[name] = +price;
+
         }
-    
-        
+
         appData.adaptive = confirm("Нужен ли адаптив");
+
     },
 
     getAllServicePrice : function() {
