@@ -10,12 +10,12 @@ const appData = {
     setBtn : document.querySelector(".screen-btn"),
     items1: document.querySelectorAll('.percent'),
     items2: document.querySelectorAll('.number'),
-    inputTypeRange: document.querySelector('.rollback').querySelector('input[type = "range"]'),
-    span: document.querySelector('.rollback').querySelector('.range-value'),
+    inputTypeRange: document.querySelector('.rollback input[type = "range"]'),
+    span: document.querySelector('.rollback .range-value'),
     totlInputItem1: document.getElementsByClassName('total-input')[0],
     totlInputItem2: document.getElementsByClassName('total-input')[1],
     totlInputItem3: document.getElementsByClassName('total-input')[2],
-    totlInputItem: document.getElementsByClassName('total-input')[3],
+    totlInputItem4: document.getElementsByClassName('total-input')[3],
     totlInputItem5: document.getElementsByClassName('total-input')[4],
     screens: document.querySelectorAll('.screen'),
     screenPrice: 0,
@@ -28,11 +28,11 @@ const appData = {
  
     start: () => {
         // вопросы заказчику
-        appData.asking();
+        // appData.asking();
         appData.getAllServicePrice();
         appData.getFullPrice();
         appData.getServicePercentPrices();
-        appData.getTitle();
+        // appData.getTitle();
     
         // сообщения в консоль
         appData.loger();
@@ -119,10 +119,10 @@ const appData = {
     
     },
 
-    getTitle : function(){
+    // getTitle : function(){
 
-        appData.title =  appData.title.trim()[0].toUpperCase() + appData.title.trim(1).substr(1).toLowerCase();
-    },
+    //     appData.title =  appData.title.trim()[0].toUpperCase() + appData.title.trim(1).substr(1).toLowerCase();
+    // },
 
     getServicePercentPrices: function () {
 
