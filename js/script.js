@@ -5,6 +5,7 @@
     const linkBook3 = books[4].querySelector('a');
     const listItemsBook2 = books[0].querySelectorAll('li'); // Получил главы со второй книги
     const listItemsBook5 = books[5].querySelectorAll('li'); // Получил главы с пятой книги
+    const listBook6 = books[2].querySelector('ul');
 
 
     const advertising = document.querySelector('.adv'); // Реклама.
@@ -40,13 +41,19 @@
 
 
     // Востановить порядок глав в пятой книге.
+    listItemsBook5[1].after(listItemsBook5[9]);
 
-    listItemsBook5[10].after(listItemsBook5[4]);
-
-
-
+    listItemsBook5[4].after(listItemsBook5[2]);
+    listItemsBook5[7].after(listItemsBook5[5]);
+    
 
     //в шестой книге добавить главу “Глава 8: За пределами ES6” и поставить её в правильное место
+
+    let chapter8 = document.createElement('li');
+    chapter8.textContent = "Глава 8: За пределами ES6";
+    listBook6.append(chapter8);
+
+
 
 
     // Вывод консоли
@@ -55,6 +62,16 @@
     console.log(linkBook3.textContent);
     console.log(listItemsBook2 ,"Список глав в книге 2");
     console.log(listItemsBook5 ,"Список глав в книге 5");
+    console.log(listBook6 ,"Список глав в книге 6");
+
+
+    
+    console.log(chapter8 ,"Новая 8-я глава");
+
+    
+
+
+    
 
 
     
