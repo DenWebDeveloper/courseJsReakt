@@ -1,13 +1,14 @@
-
+"use strict";
 // Задание 1 Урок 9
 
 // Объявление переменных
-// let title = document.getElementsByTagName("h1")[0];
+const screens = document.querySelectorAll('.screen');
+
 
 const appData = {
     
     title: document.getElementsByTagName("h1")[0],
-    startBtn: document.getElementsByClassName("handler_btn"),
+    startBtn: document.getElementsByClassName("handler_btn")[0],
     setBtn : document.querySelector(".screen-btn"),
     items1: document.querySelectorAll('.percent'),
     items2: document.querySelectorAll('.number'),
@@ -18,7 +19,7 @@ const appData = {
     totlInputItem3: document.getElementsByClassName('total-input')[2],
     totlInputItem4: document.getElementsByClassName('total-input')[3],
     totlInputItem5: document.getElementsByClassName('total-input')[4],
-    screens: document.querySelectorAll('.screen'),
+    screens: [],
     screenPrice: 0,
     rollback: 10,
     adaptive: true,
@@ -30,8 +31,9 @@ const appData = {
     init: function() {
 
         appData.addTitle();
-        appData.start();
+        // appData.start();
         appData.startBtn.addEventListener('click', appData.start);
+    
     },
 
     addTitle: function(){
@@ -42,7 +44,8 @@ const appData = {
     },
  
     start: function() {
-        alert("Все отработало, УРААААААА");
+        
+        appData.addScreens();
         // вопросы заказчику
         // appData.asking();
         // appData.getAllServicePrice();
@@ -59,6 +62,23 @@ const appData = {
         return !isNaN(parseFloat(num) && isFinite(num));
     },
 
+    addScreens: function() {
+        screens.forEach(function(screen, index){
+            
+            const select = screen.querySelector("select");
+            const input = screen.querySelector("input");
+            const selectName = select.options[select.selectedIndex].textContent;
+
+            appData.screens.push({
+                id: index, 
+                name: selectName, 
+                price: +select.value * +input.value,
+            });
+        
+        });
+    },
+
+    
     loger: function (){
         for (let key in appData) {
           let type = typeof (appData[key]);
@@ -84,20 +104,6 @@ const appData = {
 
     asking : function(){
 
-
-        do {
-            appData.title = prompt("Как называется ваш проект", "Пример: Калькулятор верстки");
-        } while(appData.isNum(appData.title) || appData.title === "");
-
-        do {
-            appData.screens = prompt("Простые, Сложные, Интерактивные", "Простые, Сложные и т.д.");
-        } while(appData.isNum(appData.screens) || appData.screens === "");
-
-        do {
-            appData.screenPrice = +prompt("Склько будет стоить данная услуга");
-        } while(!appData.isNum(appData.screenPrice) || appData.screenPrice === 0);
-
-
         for(let i = 0; i < 2 ; i++){
 
             let name;
@@ -116,8 +122,6 @@ const appData = {
             appData.services[name] = +price;
 
         }
-
-        appData.adaptive = confirm("Нужен ли адаптив");
 
     },
 
