@@ -7,7 +7,7 @@
 const appData = {
     
     title: document.getElementsByTagName("h1")[0],
-    calculate: document.getElementsByClassName("handler_btn"),
+    startBtn: document.getElementsByClassName("handler_btn"),
     setBtn : document.querySelector(".screen-btn"),
     items1: document.querySelectorAll('.percent'),
     items2: document.querySelectorAll('.number'),
@@ -31,14 +31,18 @@ const appData = {
 
         appData.addTitle();
         appData.start();
+        appData.startBtn.addEventListener('click', appData.start);
     },
 
     addTitle: function(){
 
         console.log(appData.title.textContent);
+
+        document.title = appData.title.textContent;
     },
  
     start: function() {
+        alert("Все отработало, УРААААААА");
         // вопросы заказчику
         // appData.asking();
         // appData.getAllServicePrice();
