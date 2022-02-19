@@ -7,12 +7,6 @@ const otherItemsNumber = document.querySelectorAll('.other-items.number');
 
 let screens = document.querySelectorAll('.screen');
 
-
-
-// let options = document.querySelector('option');
-// let valueOption = options.attributes.value;
-// console.log(valueOption);
-
 const appData = {
     
     title: document.getElementsByTagName("h1")[0],
@@ -30,7 +24,7 @@ const appData = {
     screens: [],
     screenPrice: 0,
     allCount: 0,
-    rollback: 10,
+    rollback: 0,
     adaptive: true,
     servicePricePercent: 0,
     servicePriceNumber: 0,
@@ -54,8 +48,6 @@ const appData = {
     },
 
     addTitle: function(){
-
-        // console.log(appData.title.textContent);
 
         document.title = appData.title.textContent;
     },
@@ -83,10 +75,14 @@ const appData = {
 
     },
 
-
-    addRollback: function () {
-        appData.span.textContent = appData.rollback  + "%";
-        appData.rollback = +appData.inputTypeRange.value;
+    addRollback: function (event) {
+        appData.rollback = event.target.value;
+        appData.span.textContent = appData.rollback +'%';
+        
+        if (appData.fullPrice) {
+            appData.getAllServicePrice();
+            appData.showResult();
+        }
 
     },
 
@@ -118,10 +114,7 @@ const appData = {
         
         });
 
-        console.log(appData.screens);
-
-        // appData.disableStartBtn();
-       
+        console.log(appData.screens);       
 
         if (appData.screens.find(item => item.price === 0)) {
             return false;
@@ -153,7 +146,7 @@ const appData = {
         });
 
         otherItemsNumber.forEach(function(item){
-            // console.log(item);
+            
 
             const check = item.querySelector('input[type=checkbox]');
             const label = item.querySelector('label');
@@ -238,7 +231,7 @@ const appData = {
     getServicePercentPrices: function () {
 
 
-        appData.servicePercentPrice =  appData.fullPrice - (appData.fullPrice * (appData.rollback / 100)); 
+        appData.servicePercentPrice =  +appData.fullPrice - (appData.fullPrice * (appData.rollback / 100)); 
         
     
     },
