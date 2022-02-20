@@ -76,14 +76,11 @@ const appData = {
     },
 
     addRollback: function (event) {
+
         appData.rollback = event.target.value;
         appData.span.textContent = appData.rollback +'%';
         
-        if (appData.fullPrice) {
-            appData.getAllServicePrice();
-            appData.showResult();
-        }
-
+        
     },
 
     allCountScreens: function () {
