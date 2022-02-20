@@ -59,7 +59,7 @@ const appData = {
         }
         
         appData.addServices();
-        appData.getAllServicePrice();
+        appData.addPrices();
         appData.showResult();
         
         // appData.getServicePercentPrices();
@@ -167,8 +167,6 @@ const appData = {
         
         const cloneScreen = screens[0].cloneNode(true);
         screens[screens.length - 1].after(cloneScreen);
-        
-
     },
 
     
@@ -198,7 +196,7 @@ const appData = {
         // console.log(appData.screens);
     },
 
-    getAllServicePrice: function() {
+    addPrices: function() {
 
         for(let screen of appData.screens){
             appData.screenPrice += +screen.price;
