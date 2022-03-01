@@ -1,30 +1,20 @@
+'use strict';
 
-let  title = "Список дел";
-let  screens = "Простые, Сложные, Интерактивные";
-let  screenPrice = 100;
-let  rollback = 10;
-let  fullPrice = 1000;
-let  adaptive = true;
+class First {
 
+    hello(){
+        console.log("Привет,я метод родителя");
+    }
+}
 
-console.log(
+class Second extends First {
+    hello(){
+        super.hello();
+        console.log("A я наследуемый метод");
+    }
+}
 
-    `Типы перемнных: \n ` + 
+const outPut = new Second();
 
-    `\t title: ${typeof(title)},
+outPut.hello();
 
-    fullPrice: ${typeof(fullPrice)},
-
-    adaptive: ${typeof(adaptive)};`);
-
-console.log("Длина строки 'screens' = "+ screens.length  + " " + "символ");
-
-console.log(`Стоимость верстки экранов: ${screenPrice} рублей/ долларов/гривен/юани`);
-
-console.log(`Стоимость разработки сайта: ${fullPrice} рублей/ долларов/гривен/юани`);
-
-// Перевел строку screens в нижний регист и вывел в массив, затемв console.
-console.log( screens.toLowerCase().split(', ') );
-
-// Процент, который получит посредник.
-console.log(`Посреднику - ${rollback}% \nЭто целых ${ fullPrice * (rollback/100) } рублей/ долларов/гривен/юани !`);
